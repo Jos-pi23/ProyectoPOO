@@ -5,7 +5,13 @@
 
 package principal;
 import java.util.Scanner;
+import Usuarios.*;
+import Urbanizacion.*;
 
+import java.util.ArrayList;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
 /**
  *
  * @author DANIEL
@@ -15,8 +21,13 @@ public class Sistema {
 
     public static void main(String[] args) {
         System.out.println("-----Menú del Sistema-------");
-        System.out.println("1.Urbanizacion\n2.Residentes\n3.Visitantes\n4.Colaboradores de la Urbanizacion\n5.Permisos de entrada\n6.Revision de entrada\n7.Reportes\n8.Salir\n");
-        
+        System.out.println("1.Urbanizacion\n2.Residentes\n3.Visitantes"
+        + "\n4.Colaboradores de la Urbanizacion"
+        + "\n5.Permisos de entrada"
+        + "\n6.Revision de entrada"
+        + "\n7.Reportes"
+        + "\n8.Salir\n");
+
         //metodo incializarSistema();
         
         System.out.print("Elija una opción: ");

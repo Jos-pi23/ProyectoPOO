@@ -34,7 +34,9 @@ public class Sistema {
 
             System.out.print("Elija una opción: ");
             valorMenu= entra.nextInt();
+
             entra.skip("\n");
+
             switch(valorMenu){
                 case 1: 
                     System.out.println("\tUrbanizacion\n");

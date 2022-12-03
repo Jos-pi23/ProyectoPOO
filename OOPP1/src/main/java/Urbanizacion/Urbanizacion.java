@@ -86,23 +86,19 @@ cambios*/
     public void menuUrbanizacion(){
         mostrarInfoUrbanizacion();
         System.out.println( " 1. actualizar informacion 2. salir.");
-
         String opcion= entra.next();
         
         switch(opcion){
             case "1":
-
                 System.out.println("Que desea modificar: "
                 + "\n1. nombre urbanizacion 2. etapa numero, "
-                        + "3. email adm . 4adm.");
+                        + "3. email adm . 4adm. 5.Constructora");
                 int numero= entra.nextInt();
                 
                 modificarInfoUrbanizacion(numero);
                 System.out.println("datos actualizados correctamente");
                 break;
-
             case "2":
-
                 System.out.println("saliendo...");
                 break;
             default:
@@ -131,6 +127,9 @@ cambios*/
                 break;
             case 4:
                 cambiarAdminUrbanizacion();
+                break;
+            case 5:
+                cambiarConstructora();
                 break;
             default:
                 System.out.println("No se encuentra entre las opciones"
@@ -169,6 +168,11 @@ cambios*/
         }
         
     }
+    private void cambiarConstructora(){
+        System.out.println("Ingrese nombre de la constructora :");
+        String constructora= entra.nextLine().toUpperCase();
+        setConstructora(constructora);
+    }
 //FIN URBANIZACION
     
     
@@ -182,7 +186,6 @@ agregar, eliminar, modificar la informacion de residentes*/
         this.mostrarPersonas(2);
         System.out.println("1.Agregar residentes  2. eliminar residentes"
                 + "  3.modificar datos de residente 4. salir");
-
         String opcion= entra.next();
         entra.skip("\n");
         switch(opcion){
@@ -229,15 +232,13 @@ modifican y sancionan a un visitante.usa eliminar persona.*/
         System.out.println("1.Agregar visitantes  2. eliminar visitantes"
                 + "  3.modificar datos de visitante "
                 + "4. sancionar visitante 5. salir");
-
         String opcion=entra.next();
         switch(opcion){
             case "1":
-
+                
                 agregarVisitante();
                 this.mostrarPersonas(3);
                 break;
-
             case "2":
                 eliminarPersonas();
                 this.mostrarPersonas(3);
@@ -299,11 +300,11 @@ que se pueden realizar . agregar, eliminar, modificar datos*/
 
         System.out.println("1.Agregar  colaborador  2. eliminar  colaborador"
                 + "  3.modificar datos de colaborador 4. salir");
-
         String opcion=entra.next();
 
         switch(opcion){
             case "1" -> {
+                agregarColaborador();
                 System.out.println("colaborador agregado!");
                 this.mostrarPersonas(4);
             }
@@ -341,9 +342,8 @@ consultar los permisos*/
          System.out.println("1. Crear permisos de entrada\n2. Eliminar permiso"
         + " de entrada\n3. Consultar permisos por manzana y villa"
                  + "\n4. saliendo");
-
         String opcion=entra.next();
-        switch(opcion){
+       switch(opcion){
             case "1": 
                crearPermiso();
 
@@ -356,7 +356,7 @@ consultar los permisos*/
                 consultarPermisosMZVilla();
                 break;
             case "4":
-                    System.out.println("saliendo...");
+                System.out.println("saliendo...");
                 break;
             default:
                 System.out.println("opcion invalida.");

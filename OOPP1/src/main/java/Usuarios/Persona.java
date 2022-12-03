@@ -64,7 +64,8 @@ public class Persona {
     }
     //Metodos privados para el ingreso de datos de un objeto Persona
     private String definirNombre(){
-//el skip, hay que darle enter para que no se omita el definir nombre. 
+//el skip, hay que darle enter para que no se omita el definir nombre.
+        
         entra.skip("\n");
         System.out.println("Ingrese nuevo nombre: ");
         
@@ -88,6 +89,8 @@ public class Persona {
     }
     //Definir datos. metodo sobreecrito por las subclases de Persona
     public Persona definirDatos(){
+        System.out.println("La primera vez presione enter  para continuar");
+        
         String nombre=definirNombre();
         String correo= definirEmail();
         String cedula= definirCedula();

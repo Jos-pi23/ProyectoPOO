@@ -122,7 +122,9 @@ public class Colaborador extends Persona {
     private LocalDate definirFecha(){
         
         String [] fecha= entra.nextLine().replace(" ","-").
-                replace("/","-").split("-");
+                replace("/","-")
+                .replace(":","-").split("-");
+                
         int dia= Integer.parseInt(fecha[0]);
         int mes= Integer.parseInt(fecha[1]);
         int año= Integer.parseInt(fecha[2]);

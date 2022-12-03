@@ -20,46 +20,93 @@ public class Sistema {
     public static Scanner entra= new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("-----Menú del Sistema-------");
-        System.out.println("1.Urbanizacion\n2.Residentes\n3.Visitantes"
-        + "\n4.Colaboradores de la Urbanizacion"
-        + "\n5.Permisos de entrada"
-        + "\n6.Revision de entrada"
-        + "\n7.Reportes"
-        + "\n8.Salir\n");
+        //Carga en memoria los datos de urbanizacion y personas dentro.
+        Urbanizacion u1= inicializarSistema();
+        int valorMenu;
+        do{
+            System.out.println("-----Menú del Sistema-------");
+            System.out.println("1.Urbanizacion\n2.Residentes\n3.Visitantes"
+            + "\n4.Colaboradores de la Urbanizacion"
+            + "\n5.Permisos de entrada"
+            + "\n6.Revision de entrada"
+            + "\n7.Reportes"
+            + "\n8.Salir\n");
 
-        //metodo incializarSistema();
+            System.out.print("Elija una opción: ");
+            valorMenu= entra.nextInt();
+            entra.skip("\n");
+            switch(valorMenu){
+                case 1: 
+                    System.out.println("\tUrbanizacion\n");
+                    menuUrbanizacion(u1);
+                    break;
+                case 2:
+                    System.out.println("\tResidentes\n");
+                    menuResidentes(u1);
+                    break;
+                case 3:
+                    System.out.println("\tVisitantes\n");
+                    menuVisitantes(u1);
+                    break;
+                case 4:
+                    System.out.println("\tColaboradores de la Urbanización\n");
+                    menuColaboradores(u1);
+                    break;
+                case 5:
+                    System.out.println("\tPermisos de entrada\n");
+                    menuPermisos(u1);
+                    break;
+                case 6: 
+                    System.out.println("\tRevision de entrada\n");
+                    menuRevision(u1);
+                    break;
+                case 7: 
+                    System.out.println("\tReportes\n");
+                    menuReportes(u1);
+                    break;
+                case 8:
+                    System.out.println("\tSaliendo del sistema...");
+                    break;
+                default:
+                    System.out.println("Ese numero no se encuentra entre las"
+                            + " opciones del menú");
+            }
+        }while(valorMenu !=8);
+    }
+    //Los datos de la urbanizacion
+    public static Urbanizacion  inicializarSistema(){
+        Urbanizacion u1= new Urbanizacion("Metropolis",1,
+        "adminMetropolis@out.com","Constructora BBB",
+        null);
         
-        System.out.print("Elija una opción: ");
-        int valorMenu= entra.nextInt();
-        //AQUI IRAN LOS CAMPOS DE CODIGO PARA CADA ACCION, COMO ES UN MENÚ USAMOS SWITCH
-        switch(valorMenu){
-            case 1: 
-                System.out.println("Urbanizacion");
-                break;
-            case 2:
-                System.out.println("Residentes");
-                break;
-            case 3:
-                System.out.println("Visitantes");
-            case 4:
-                System.out.println("Colaboradores de la Urbanización");
-                break;
-            case 5:
-                System.out.println("Permisos de entrada");
-                break;
-            case 6: 
-                System.out.println("Revision de entrada");
-                break;
-            case 7: 
-                System.out.println("Reportes");
-            case 8:
-                System.out.println("Saliendo del sistema...");
-                break;
-            default:
-                System.out.println("Ese numero no se encuentra entre las opciones del menú");
-        }
+        u1.inicializar();
         
+        return u1;
+    }
+    //Los metodos de los diferentes apartados del menú.
+    public static void menuUrbanizacion(Urbanizacion u){
         
+        u.menuUrbanizacion();
+    }
+    public static void menuResidentes(Urbanizacion u){
+        u.menuResidentes();
+    }
+    
+    public static void menuVisitantes(Urbanizacion u){
+        u.menuVisitantes();
+        
+    }
+    public static void menuColaboradores(Urbanizacion u){
+        u.menuColaboradores();
+    }
+    public static void menuPermisos(Urbanizacion u){
+        
+        u.menuPermisos();
+    }
+    public static void menuRevision(Urbanizacion u){
+        u.menuRevision();
+    }
+    public static void menuReportes(Urbanizacion u){
+        u.menuReportes();
     }
 }
